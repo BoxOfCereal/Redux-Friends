@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { FriendList } from "../components";
+import { FriendList, CreateFriendForm } from "../components";
 // import actions
 
 class FriendListView extends React.Component {
@@ -21,6 +21,7 @@ class FriendListView extends React.Component {
     return (
       <div>
         <FriendList friends={this.props.friends} />
+        <CreateFriendForm />
       </div>
     );
   }
