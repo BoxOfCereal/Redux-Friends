@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <Route path="/friends" component={FriendListView} />
+        <Route path="/" component={FriendListView} />
       </>
     );
   }
