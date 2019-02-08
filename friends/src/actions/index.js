@@ -17,7 +17,6 @@ export function fetchFriends() {
       .get(`http://localhost:5000/api/friends`)
       .then(({ data }) => {
         //destructering
-        console.log(data);
         dispatch({
           type: FRIENDS_FETCHED,
           payload: data
@@ -48,13 +47,11 @@ export function saveFriend(friend) {
   };
 }
 
-//DOESN"T UPDATE
 export function updateFriend(friend) {
   return dispatch => {
     dispatch({ type: UPDATING_FRIENDS });
     //destruct id and friend with no id
     const { id, ...friendWithNoId } = friend;
-    console.log(friendWithNoId);
     axios
       .put(`http://localhost:5000/api/friends/${id}`, friendWithNoId)
       .then(({ data }) => {
