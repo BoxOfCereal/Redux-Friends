@@ -3,14 +3,17 @@ import { connect } from "react-redux";
 
 import { FriendList, CreateFriendForm } from "../components";
 // import actions
+import { fetchFriends } from "../actions/index";
 
 class FriendListView extends React.Component {
   constructor(props) {
     super(props);
+    console.log(this.props);
   }
 
   componentDidMount() {
     // call our action
+    this.props.fetchFriends();
   }
 
   render() {
@@ -29,11 +32,11 @@ class FriendListView extends React.Component {
 
 const mstp = ({ friendsReducer: state }) => {
   return {
-    friends: []
+    friends: state.friends
   };
 };
 
 export default connect(
   mstp,
-  {}
+  { fetchFriends }
 )(FriendListView);
