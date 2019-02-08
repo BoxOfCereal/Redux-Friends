@@ -17,7 +17,8 @@ class FriendListView extends React.Component {
   }
 
   render() {
-    if (this.props.fetching) {
+    console.log(this.props);
+    if (this.props.fetchingFriends) {
       // return something here to indicate that you are fetching data
       return <p>FETCHING DATA...</p>;
     }
@@ -32,7 +33,8 @@ class FriendListView extends React.Component {
 
 const mstp = ({ friendsReducer: state }) => {
   return {
-    friends: state.friends
+    friends: state.friends,
+    fetchingFriends: state.fetchingFriends
   };
 };
 
