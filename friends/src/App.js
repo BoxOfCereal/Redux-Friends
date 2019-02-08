@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Route } from "react-router-dom";
 import "./App.css";
 import FriendListView from "./views/FriendListView";
 
@@ -6,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <FriendListView />
+        <Route path="/friends" component={FriendListView} />
       </>
     );
   }
